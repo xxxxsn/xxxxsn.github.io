@@ -1,12 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-      <h1>小明0的烦恼!</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>立方体盒子</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body,
+      html {
+        perspective: 800px;
+      }
+
+      .box {
+        position: relative;
+        height: 500px;
+        width: 500px;
+        margin: 300px auto;
+        transform-style: preserve-3d;
+        animation: turn 10s infinite linear forwards;
+      }
+
+      .box:hover div {
+        animation-play-state: paused;
+      }
+      .box div {
+        border: 1px solid black;
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        font-size: 50px;
+        line-height: 400px;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.1);
+        float: left;
+      }
+      .box1 {
+        transform: translateZ(250px);
+      }
+      .box6 {
+        transform: translateZ(-250px);
+      }
+      .box2 {
+        transform: rotateY(90deg) translateZ(250px);
+      }
+      .box5 {
+        transform: rotateY(90deg) translateZ(-250px);
+      }
+      .box3 {
+        transform: rotateX(90deg) translateZ(250px);
+      }
+      .box4 {
+        transform: rotateX(90deg) translateZ(-250px);
+      }
+
+      @keyframes turn {
+        0% {
+          transform: rotateY(0turn);
+        }
+        100% {
+          transform: rotateY(1turn);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="box1"></div>
+      <div class="box2"></div>
+      <div class="box3"></div>
+      <div class="box4"></div>
+      <div class="box5"></div>
+      <div class="box6"></div>
+    </div>
+  </body>
 </html>
